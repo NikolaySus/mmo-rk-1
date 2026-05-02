@@ -1,0 +1,27 @@
+Target / mean encoding
+Dataset rows: 7385
+Dataset columns: 12
+NaN missing values: 0
+Empty strings in categorical columns: 0
+Missing-value decision: no deletion or imputation is required
+Encoded categorical column: Make
+Target column: CO2 Emissions(g/km)
+New column: Make_mean_encoded
+
+First encoded values:
+ Make  CO2 Emissions(g/km)  Make_mean_encoded
+ACURA                  196         223.652778
+ACURA                  221         223.652778
+ACURA                  136         223.652778
+ACURA                  255         223.652778
+ACURA                  244         223.652778
+ACURA                  230         223.652778
+ACURA                  232         223.652778
+ACURA                  255         223.652778
+ACURA                  267         223.652778
+ACURA                  212         223.652778
+
+Files:
+results/co2_emissions_with_mean_encoding.csv
+results/mean_encoding_by_make.csv
+results/scatter_engine_size_co2.png

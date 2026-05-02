@@ -1,0 +1,42 @@
+Для набора данных проведите кодирование одного (произвольного) категориального признака с использованием метода "target (mean) encoding". Для пары произвольных колонок данных построить график "Диаграмма рассеяния".
+https://www.kaggle.com/datasets/debajyotipodder/co2-emission-by-vehicles
+
+Target encoding предполагает что значение категории заменяется на ранг, соответствующий среднему значению целевого признака для этой категории.
+В случае Mean encoding в кодируемый признак подставляется усредненное значение целевого признака.
+Фактически, ранг зависит от вероятности появления целевого признака, при условии, что кодируемый признак принимает определенное значение.
+Кодирование признака управляется значением целевого признака, возникает монотонная зависимость между кодируемым признаком и целевым признаком.
+Преимущества:
+Наличие монотонной зависимости.
+Не расширяется признаковое пространство.
+Недостатки:
+Может привести к переобучению.
+Сложность использования с библиотеками кросс-валидации.
+Далее пример на датасете titanic.
+
+Использование библиотеки Сategory Encoders
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline 
+sns.set(style="ticks")
+# На самом деле этот метод реализует Mean encoding
+from category_encoders.target_encoder import TargetEncoder as ce_TargetEncoder
+ce_TargetEncoder1 = ce_TargetEncoder()
+data_MEAN_ENC = ce_TargetEncoder1.fit_transform(data[data.columns.difference(['Survived'])], data['Survived'])
+# Проверка
+data_MEAN_ENC
+# Проверка для поля "Пол"
+data['Sex'].unique()
+data_MEAN_ENC['Sex'].unique()
+def check_mean_encoding(field):
+    for s in data[field].unique():
+        data_filter = data[data[field]==s]
+        if data_filter.shape[0] > 0:
+            prob = sum(data_filter['Survived']) / data_filter.shape[0]
+            print(s, '-' , prob)
+check_mean_encoding('Sex')
+# Проверка для поля "Каюта"
+data_MEAN_ENC['Cabin'].unique()
+check_mean_encoding('Cabin')
+
