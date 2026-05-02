@@ -21,5 +21,8 @@ uv.lock
 # Jupyter local checkpoints
 .ipynb_checkpoints/
 
+# Temporary render/check files
+tmp/
+
 # Matplotlib cache generated during the report run
 results/matplotlib/
