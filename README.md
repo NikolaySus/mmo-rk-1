@@ -25,11 +25,13 @@
 - добавлен новый признак `Make_mean_encoded`;
 - построена диаграмма рассеяния для `Engine Size(L)` и `CO2 Emissions(g/km)`.
 
-Запуск:
+Запуск ноутбука:
 
 ```bash
-UV_CACHE_DIR=/tmp/uv-cache uv run python main.py
+uv run --env-file .env --with jupyter jupyter lab
 ```
+
+После запуска Jupyter Lab необходимо открыть и выполнить ноутбук `co2.ipynb`.
 
 Сохраненные результаты:
 
