@@ -1,28 +1,37 @@
+# Course materials copied locally
+courses_current.wiki/
+
 # Python-generated files
 __pycache__/
 *.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+.ruff_cache/
+.pytest_cache/
 
-# Virtual environments
-.venv
+# Virtual environments and local env files
+.venv/
 .env
-.python-version
 
-# Local Codex files
-.codex
-.codex/
-
-# Local uv package-manager files
-uv.lock
-
-# Jupyter local checkpoints
+# Jupyter local files
 .ipynb_checkpoints/
 
-# Temporary render/check files
+# Temporary files
 tmp/
 
-# Matplotlib cache generated during the report run
-results/matplotlib/
+# Homework intermediate data and experiment outputs
+hw/.venv/
+hw/.ruff_cache/
+hw/__pycache__/
+hw/data/
+hw/artifacts/
+hw/assets/
+hw/title_compare/
+hw/ITERATION_SNAPSHOT.md
+hw/РНС*.docx
+
+# Render/check intermediates. Keep the final PDF linked from hw/README.md.
+hw/render_check/*
+!hw/render_check/
+!hw/render_check/report.pdf
+
+# LibreOffice temporary profiles
+**/lo_profile*/
